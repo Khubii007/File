@@ -82,9 +82,9 @@ def main():
 	os.system("clear")
 	print(logo)
 	try:
-		fbcokis = open("data/cookie.txt", "r").read()
+		fbcookis = open("data/cookie.txt", "r").read()
 		token = open('data/token.txt','r').read()
-		ftoken = requests.get("https://business.facebook.com/business_locations", headers=head, cookies = {"cookie":fbcokis}).text
+		fbtoken = requests.get("https://business.facebook.com/business_locations", headers=head, cookies = {"cookie":fbcokis}).text
 		eaag = re.search("(EAAG\w+)",str(ftoken))
 	except:
 		slp(1)
